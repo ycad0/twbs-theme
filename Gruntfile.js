@@ -16,7 +16,7 @@ module.exports = function(grunt) {
             transitive: true
         },
         target: {
-            rjsConfig: 'assets/js/main.js'
+            rjsConfig: 'assets/js/twbs-theme.js'
         }
     },
     requirejs: {
@@ -28,6 +28,7 @@ module.exports = function(grunt) {
           modules:[{
             name: "twbs-theme",
           }],
+          noBuildTxt: true
         }
       }
     },
