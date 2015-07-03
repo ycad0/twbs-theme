@@ -7,9 +7,6 @@
   ],
   "description": "GintonicCMS theme based on Bootstrap",
   "main": ["webroot"],
-  "dependencies": {
-    "bootstrap": "*"
-  },
   "license": "MIT",
   "ignore": [
     "**/.*",
