@@ -49,7 +49,8 @@ module.exports = function(grunt) {
           optimization: 0
         },
         files: {
-          "webroot/css/default.css": "assets/less/default.less"
+          "webroot/css/default.css": "assets/less/default.less",
+          "webroot/css/bare.css": "assets/less/bare.less"
         }
       }
     },
