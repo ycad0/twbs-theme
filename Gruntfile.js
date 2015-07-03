@@ -16,24 +16,40 @@ module.exports = function(grunt) {
             transitive: true
         },
         target: {
-            rjsConfig: 'webroot/main.js'
+            rjsConfig: 'assets/js/main.js'
         }
     },
     requirejs: {
       compile: {
         options: {
-          appDir:"webroot",
+          appDir:"assets/js",
           baseUrl:"./",
           dir:"webroot/js",
-          stubModules: ['jsx', 'text', 'JSXTransformer'],
-          paths: {
-              requireLib: '../node_modules/requirejs/require',
-          },
           modules:[{
-            name: "main",
-            include: "requireLib"
+            name: "twbs-theme",
           }],
-          fileExclusionRegExp: /^.*\.(?!js$|jsx$)[^.]+$/,
+        }
+      }
+    },
+    copy: {
+      main: {
+        files: [
+          {expand: true, cwd: './assets/vendor/', src: ['**'], dest: 'webroot/vendor/'},
+        ],
+      },
+    },
+    less: {
+      production: {
+        options: {
+          paths: [
+            "assets/less",
+            "assets/vendor"
+          ],
+          compress: true,
+          optimization: 0
+        },
+        files: {
+          "webroot/css/default.css": "assets/less/default.less"
         }
       }
     },
@@ -105,8 +121,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-requirejs');
   grunt.loadNpmTasks('grunt-contrib-requirejs');
   grunt.loadNpmTasks('grunt-bower-requirejs');
+  grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-less');
 
   // Default task.
-  grunt.registerTask('default', ['bowerRequirejs','requirejs']);
+  grunt.registerTask('default', ['bowerRequirejs','requirejs', 'copy', 'less']);
 
 };
