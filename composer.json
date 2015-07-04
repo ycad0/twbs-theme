@@ -1,6 +1,6 @@
 {
-    "name": "gintonicweb/bootstrap",
-    "description": "Bootstrap theme for GintonicCMS",
+    "name": "gintonicweb/twbs-theme",
+    "description": "Twitter Bootstrap default theme for GintonicCMS",
     "homepage": "http://gintoniccms.com",
     "type": "project",
     "license": "MIT",
