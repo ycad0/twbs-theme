@@ -1,4 +1,10 @@
 {
+  "name": "twbs-theme",
+  "version": "0.0.0",
+  "description": "Twitter Bootstrap default theme for GintonicCMs",
+  "homepage": "http://gintoniccms.com",
+  "author": "Philippe Lafrance <phil.laf@gmail.com>",
+  "license": "MIT",
   "engines": {
     "node": ">= 0.10.0"
   },
