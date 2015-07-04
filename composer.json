@@ -1,8 +1,8 @@
 {
     "name": "gintonicweb/twbs-theme",
     "description": "Twitter Bootstrap default theme for GintonicCMS",
+    "type": "cakephp-plugin",
     "homepage": "http://gintoniccms.com",
-    "type": "project",
     "license": "MIT",
     "require": {
         "php": ">=5.4.16",
