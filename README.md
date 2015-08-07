@@ -1,5 +1,2 @@
-# Twitter Bootstrap Theme
-
-Bake templates for twbs theme on GintonicCMS
-
-see gintonicweb/gintonic-cms
+# bootstrap
+GintonicCMS theme based on twbs/bootstrap

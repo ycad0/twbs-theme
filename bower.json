@@ -1,0 +1,22 @@
+{
+  "name": "twbs-theme",
+  "version": "0.0.0",
+  "homepage": "http://gintoniccms.com",
+  "authors": [
+    "Philippe Lafrance <phil.laf@gmail.com>"
+  ],
+  "description": "Twitter Bootstrap default theme for GintonicCMS",
+  "main": ["webroot"],
+  "license": "MIT",
+  "ignore": [
+    "*",
+    "!assets/",
+    "!assets/**",
+    "!webroot/",
+    "!webroot/**"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.4",
+    "fontawesome": "~4.3.0"
+  }
+}
