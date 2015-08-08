@@ -53,7 +53,7 @@
                             <?= $this->Html->link(
                                 __('Sign out'),
                                 [
-                                    'plugin'=>'GintonicCMS',
+                                    'plugin'=>'Users',
                                     'controller'=>'Users',
                                     'action'=>'signout'
                                 ],
