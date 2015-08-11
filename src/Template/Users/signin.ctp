@@ -5,7 +5,7 @@
                 <?php echo __('Sign in to continue'); ?>
             </h1>
             <div class="account-wall">
-                <?= $this->element('GintonicCMS.site_logo'); ?>
+                <?= $this->element('site_logo'); ?>
                 <?= $this->Flash->render(); ?>
                 <?= $this->Form->create('Users', [
                     'inputdefaults' => [

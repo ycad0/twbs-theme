@@ -6,7 +6,7 @@ use Cake\Core\Configure;
         <div class="col-sm-6 col-md-4 col-md-offset-4">
             <h1 class="text-center login-title">Reset your password</h1>
             <div class="account-wall">
-                <?= $this->element('GintonicCMS.site_logo'); ?>
+                <?= $this->element('site_logo'); ?>
                 <?= $this->Form->create('Users', [
                     'class' => 'form-signin',
                     'url'=>[

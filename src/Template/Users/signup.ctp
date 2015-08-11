@@ -3,7 +3,7 @@
         <div class="col-sm-6 col-md-4 col-md-offset-4">
             <h1 class="text-center login-title"><?php echo __('Sign up'); ?></h1>
             <div class="account-wall">
-                <?= $this->element('GintonicCMS.site_logo'); ?>
+                <?= $this->element('site_logo'); ?>
                 <?= $this->Flash->render(); ?>
                 <?= $this->Form->create('Users',[
                     'url'=>['action'=>'signup'],

@@ -27,9 +27,9 @@
             <?= $this->fetch('content'); ?>	                    
         </div>
 
-        <?= $this->Require->req('jquery');?>
-        <?= $this->Require->req('bootstrap');?>
-        <?= $this->Require->load(); ?>
+        <?= $this->Require->module('jquery');?>
+        <?= $this->Require->module('bootstrap');?>
+        <?= $this->Require->load('TwbsTheme.main'); ?>
 
     </body>
 </html>

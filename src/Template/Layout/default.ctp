@@ -22,7 +22,7 @@
     </head>
     <body>
 
-        <?= $this->element('GintonicCMS.Menus/top_menu')?>
+        <?= $this->element('top_menu')?>
 
         <div class="container">
             <div class="row">
@@ -37,9 +37,9 @@
             <p class="text-muted">Powered by <a href="https://github.com/gintonicweb/GintonicCMS">GintonicCMS</a> from <a href="http://gintonicweb.com">Gintonic Web</a> </p>
           </div>
         </footer>
-        <?= $this->Require->req('jquery');?>
-        <?= $this->Require->req('bootstrap');?>
-        <?= $this->Require->load(); ?>
+        <?= $this->Require->module('jquery');?>
+        <?= $this->Require->module('bootstrap');?>
+        <?= $this->Require->load('TwbsTheme.main', 'TwbsTheme.main'); ?>
     </body>
 </html>
 
