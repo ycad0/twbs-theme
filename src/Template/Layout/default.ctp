@@ -39,7 +39,7 @@
         </footer>
         <?= $this->Require->module('jquery');?>
         <?= $this->Require->module('bootstrap');?>
-        <?= $this->Require->load('TwbsTheme.main', 'TwbsTheme.main'); ?>
+        <?= $this->Require->load('Requirejs.require', 'TwbsTheme.main'); ?>
     </body>
 </html>
 
