@@ -12,7 +12,7 @@
             <?= $this->fetch('title') ?>
         </title>
 
-        <?= $this->Html->css('TwbsTheme.default') ?>
+        <?= $this->Html->css('twbs-default') ?>
 
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>

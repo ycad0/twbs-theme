@@ -63,8 +63,8 @@ module.exports = function(grunt) {
           optimization: 0
         },
         files: {
-          "webroot/css/default.css": "assets/less/default.less",
-          "webroot/css/bare.css": "assets/less/bare.less"
+          "webroot/css/twbs-default.css": "assets/less/twbs-default.less",
+          "webroot/css/twbs-bare.css": "assets/less/twbs-bare.less"
         }
       }
     },
