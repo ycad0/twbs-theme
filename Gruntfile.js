@@ -120,6 +120,18 @@ module.exports = function(grunt) {
         files: '<%= jshint.gruntfile.src %>',
         tasks: ['jshint:gruntfile']
       },
+      requirejs: {
+        files: [
+            "assets/js/**/*"
+        ],
+        tasks: ["requirejs"]
+      },  
+      less: {
+          files: [
+            "assets/less/**/*",
+          ],
+          tasks: ["less"]
+      },
       lib_test: {
         files: '<%= jshint.lib_test.src %>',
         tasks: ['jshint:lib_test', 'qunit']

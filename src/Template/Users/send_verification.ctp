@@ -1,6 +1,7 @@
+<?php $this->layout = 'bare' ?>
 <div class="container">
     <div class="row">
-        <div class="col-sm-6 col-md-4 col-md-offset-4">
+        <div class="col-md-4 col-md-offset-4">
             <h1 class="text-center login-title"><?= __('Resend the Email Verification') ?></h1>
             <?= $this->element('site_logo'); ?>
             <?= $this->Form->create('Users', [

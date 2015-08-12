@@ -1,6 +1,7 @@
+<?php $this->layout = 'bare' ?>
 <div class="container">
     <div class="row">
-        <div class="col-sm-6 col-md-4 col-md-offset-4">
+        <div class="col-md-4 col-md-offset-4">
             <h1 class="text-center login-title"><?php echo __('Forgot your password?'); ?></h1>
             <div class="account-wall">            
                 <?= $this->element('site_logo'); ?>

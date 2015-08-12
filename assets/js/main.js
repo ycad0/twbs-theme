@@ -6,7 +6,7 @@ requirejs.config({
         fontawesome: '../vendor/fontawesome/fonts/*'
     },
     shim: {
-
+        bootstrap: ['jquery']
     },
     packages: [
 
