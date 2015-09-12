@@ -1,0 +1,1 @@
+define(["require","react","chat/chatbox"],function(e){var t=e("react"),n=e("chat/chatbox");t.render(t.createElement(n,{id:1}),document.getElementById("example"))});
