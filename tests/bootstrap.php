@@ -113,8 +113,7 @@ ini_set('intl.default_locale', 'en_US');
 Router::reload();
 Cake\Routing\DispatcherFactory::add('Routing');
 Cake\Routing\DispatcherFactory::add('ControllerFactory');
-Plugin::load('GintonicCMS', [
-    'path' => ROOT . DS,
-    'bootstrap' => true,
-    'routes' => true
-]);
+
+Plugin::load('BootstrapUI', ['path' => ROOT . DS]);
+Plugin::load('Requirejs', ['path' => ROOT . DS]);
+Plugin::load('Websockets', ['path' => ROOT . DS]);
