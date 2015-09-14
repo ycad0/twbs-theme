@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/gintonicweb/twbs-theme.svg)](https://travis-ci.org/gintonicweb/twbs-theme)
+
 # bootstrap
 
 GintonicCMS theme based on twbs/bootstrap
