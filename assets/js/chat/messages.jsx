@@ -1,35 +1,42 @@
 define(function(require) {
 
     var React = require('react');
+    var $ = require('jquery');
+
     var Messages = React.createClass({
+
         render: function() {
-            var messages = this.props.data.messages.map(function (message){
-                var email = 'Me';
-                if(('user' in message) && ('email' in message.user)) {
-                    email = message.user.email;;
-                }
+
+            var messages = this.props.messages.map(function (message){
+                 
+                // message {
+                //     margin: 30px 0;
+                // }
+                //
+                // message-avatar {
+                //     style="margin: 0 10px;"
+                // }
+                //
+                // message-avatar {
+                //     style="margin: 0 10px;"
+                // }
+                
                 return(
-                    <li className="left clearfix">
-                        <span className="chat-img pull-left">
-                           <img className="img-circle avatar" src="/gintonic_c_m_s/img/avatar.jpg"></img> 
-                        </span>
-                        <div className="chat-body clearfix">
-                            <div className="header">
-                                <strong className="primary-font">{email}</strong> 
-                                <small className="pull-right text-muted">
-                                    <span className="glyphicon glyphicon-time"></span>
-                                    12 mins ago
-                                </small>
-                            </div>
-                            <p>{message.body}</p>
+                    <div className="message">
+                        <div className="pull-left">
+                            <img src="/messages/img/avatar.jpg" className="img-circle message-avatar" alt="John Doe"/>
                         </div>
-                    </li>
+                        <div>
+                            <span className="pull-right">{new Date(message.created).toDateString()}</span>
+                            <p><a href="#">{message.user.first + ' ' + message.user.last}</a></p>
+                            {message.body}
+                        </div>
+                    </div>
                 );
             });
+
             return (
-                <ul className="chat">
-                    {messages} 
-                </ul>
+                <div>{messages}</div>
             );
         }
     });

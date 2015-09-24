@@ -55,7 +55,7 @@
         </div>
         <div class="col-md-4">
             <?php foreach ($threads as $thread) : ?>
-                <?= $this->element('preview', ['thread' => $thread]) ?>
+                <?= $this->element('Messages.preview', ['thread' => $thread]) ?>
             <?php endforeach; ?>
             <div class="paginator">
                 <ul class="pagination">
