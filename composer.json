@@ -12,6 +12,8 @@
         "gintonicweb/websockets": "dev-master"
     },
     "require-dev": {
+        "phpunit/phpunit": "*",
+        "cakephp/cakephp-codesniffer": "dev-master"
     },
     "suggest": {
     },
