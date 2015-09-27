@@ -12,7 +12,7 @@ define(function(require) {
 
         fetchUrl: "/messages/threads/view.json",
         sendUrl:  "/messages/messages/add.json",
-        //recieveUri: "messages.send",
+        recieveUri: "messages.add",
 
         getInitialState: function() {
             return {
@@ -37,10 +37,10 @@ define(function(require) {
             });
         },
 
-        //recieved: function(data){
-        //    this.state.messages.push(data);
-        //    this.setState({messages: this.state.messages});
-        //},
+        recieved: function(data) {
+            this.state.messages.push(data);
+            this.setState({messages: this.state.messages});
+        },
 
         render: function() {
 

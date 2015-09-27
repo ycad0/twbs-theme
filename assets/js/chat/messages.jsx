@@ -9,26 +9,15 @@ define(function(require) {
 
             var messages = this.props.messages.map(function (message){
                  
-                // message {
-                //     margin: 30px 0;
-                // }
-                //
-                // message-avatar {
-                //     style="margin: 0 10px;"
-                // }
-                //
-                // message-avatar {
-                //     style="margin: 0 10px;"
-                // }
-                
+                var name = message.user.first + ' ' + message.user.last;
                 return(
                     <div className="message">
                         <div className="pull-left">
-                            <img src="/messages/img/avatar.jpg" className="img-circle message-avatar" alt="John Doe"/>
+                            <img src="/messages/img/avatar.jpg" className="img-circle message-avatar" alt="{name}"/>
                         </div>
                         <div>
                             <span className="pull-right">{new Date(message.created).toDateString()}</span>
-                            <p><a href="#">{message.user.first + ' ' + message.user.last}</a></p>
+                            <p><a href="#">{name}</a></p>
                             {message.body}
                         </div>
                     </div>
