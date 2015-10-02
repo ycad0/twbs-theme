@@ -11,16 +11,10 @@
                     'templates'=>['submitContainer' => '<div class="submit form-group">{{content}}</div>'],
                     'class' => 'form-signin form-horizontal','id'=>'UserSignupForm'
                 ]);?>
-                <?= $this->Form->input('first',[
+                <?= $this->Form->input('username',[
                     'class'=>'form-control',
-                    'placeholder'=>__('First Name'),
+                    'placeholder'=>__('Username'),
                     'id'=>'signup-first',
-                    'required'
-                ]);?>
-                <?= $this->Form->input('last',[
-                    'class'=>'form-control',
-                    'placeholder'=>__('Last Name'),
-                    'id'=>'signup-last',
                     'required'
                 ]);?>
                 <?= $this->Form->input('email',[
