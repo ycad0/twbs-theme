@@ -28,8 +28,7 @@
                 <?php if($this->request->session()->check('Auth.User')): ?>
                 <li class="dropdown">
                     <?= $this->Html->link(
-                        $this->request->session()->read('Auth.User.first') . ' ' . 
-                        $this->request->session()->read('Auth.User.last') . 
+                        $this->request->session()->read('Auth.User.username') .
                         '<span class="caret"></span>',
                         '#',
                         [
