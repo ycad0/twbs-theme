@@ -1,4 +1,4 @@
-<?debug('test');exit;?>
+<?php //debug('test');exit;?>
 <div class="container">
     <div class="row">
         <div class="col-md-8">

@@ -8,16 +8,14 @@ define(function(require) {
         render: function() {
 
             var messages = this.props.messages.map(function (message){
-                 
-                var name = message.user.first + ' ' + message.user.last;
                 return(
                     <div className="message">
                         <div className="pull-left">
-                            <img src="/messages/img/avatar.jpg" className="img-circle message-avatar" alt="{name}"/>
+                            <img src="/TwbsTheme/img/avatar.jpg" className="img-circle message-avatar" alt="{name}"/>
                         </div>
                         <div>
                             <span className="pull-right">{new Date(message.created).toDateString()}</span>
-                            <p><a href="#">{name}</a></p>
+                            <p><a href="#">{message.user.username}</a></p>
                             {message.body}
                         </div>
                     </div>

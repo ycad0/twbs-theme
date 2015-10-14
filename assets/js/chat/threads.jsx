@@ -11,7 +11,7 @@ define(function(require) {
                  
                 var users = [];
                 thread['users'].forEach(function(user){
-                    users.push(user.first + " " + user.last);
+                    users.push(user.username);
                 });
                 return(
                     <div className="panel panel-default">
@@ -22,7 +22,7 @@ define(function(require) {
                         <div className="panel-body">
                             <div className="row">
                                 <div className="col-md-3 text-center">
-                                    <img src="/messages/img/avatar.jpg" className="img-circle img-responsive center-block"/>
+                                    <img src="/TwbsTheme/img/avatar.jpg" className="img-circle img-responsive center-block"/>
                                     <a href="#">View</a>
                                 </div>
                                 <div className="col-md-9">

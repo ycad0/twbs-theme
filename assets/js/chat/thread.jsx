@@ -26,7 +26,7 @@ define(function(require) {
 
             var users = [];
             data['thread']['users'].forEach(function(user){
-                users.push(user.first + " " + user.last);
+                users.push(user.username);
             });
 
             this.setState({
