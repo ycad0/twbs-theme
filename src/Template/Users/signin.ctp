@@ -32,9 +32,9 @@
                     )?>
                 </p>
 
-                <?= $this->Form->input('email', [
+                <?= $this->Form->input('username', [
                     'label' => false,
-                    'placeholder' => 'Email',
+                    'placeholder' => 'username',
                     'required', 'autofocus'
                 ])?>
                 <?= $this->Form->input('password', [
