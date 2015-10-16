@@ -22,6 +22,14 @@
         <div class="collapse navbar-collapse" id="user-menu">
             <?php if ($this->request->session()->check('Auth.User')) : ?>
             <ul class="nav navbar-nav">
+                <li>
+                    <?= $this->Html->link('Messages',
+                        [
+                            'controller' => 'threads',
+                            'plugin' => 'messages',
+                        ]
+                    ) ?>
+                </li>
             </ul>
             <?php endif; ?>
             <ul class="nav navbar-nav navbar-right">
