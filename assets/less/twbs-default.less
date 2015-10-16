@@ -3,6 +3,7 @@
 
 // Font awesome
 @import "fontawesome/less/font-awesome.less";
+@import "selectize/dist/less/selectize.bootstrap3.less";
 
 // Gintonic features
 @import "users.less";
@@ -59,21 +60,8 @@ img.site-logo{
     }
 }
 
-/* Utilities
+/* Gintonic theme
 -------------------------------------------------- */
-
-.floating-flash{
-    position: fixed;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-}
-.inner-flash{
-    margin: 0 auto;
-}
-
-/* Gintonic theme */
 
 .jumbotron{
     background-color: @brand-primary;
@@ -95,4 +83,9 @@ img.site-logo{
 #title-logo{
     max-width: 250px;
     margin: 0 auto 15px auto;
+}
+
+.alert {
+    border-radius: 0px;
+    margin-bottom: 0px;
 }

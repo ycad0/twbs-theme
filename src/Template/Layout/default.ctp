@@ -23,12 +23,7 @@
     <body>
 
         <?= $this->element('top_menu')?>
-
-        <div class="container">
-            <div class="row">
-                <?= $this->Flash->render(); ?>
-            </div>
-        </div>
+        <?= $this->Flash->render(); ?>
 
         <?= $this->fetch('content'); ?>	                    
 
