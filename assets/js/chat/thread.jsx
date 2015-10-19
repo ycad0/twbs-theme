@@ -1,8 +1,8 @@
 define(function(require) {
 
+    var $ = require('jquery');
     var React = require('react');
     var Messages = require('chat/messages');
-    var NewThread = require('chat/newThread');
     var Heading = require('chat/heading');
     var Compose = require('chat/compose');
     var CommunicationMixin = require('websockets/mixin');
@@ -11,20 +11,14 @@ define(function(require) {
 
         mixins: [CommunicationMixin],
 
-        fetchUrl: "/messages/threads/view.json",
-        sendUrl:  "/messages/messages/add.json",
+        fetchUrl: "/api/threads/view.json",
+        sendUrl:  "/api/messages/add.json",
         recieveUri: "messages.add",
 
-        getInitialState: function() {
-            return {
-                title: this.props.title,
-                users: [this.props.users],
-                messages: []
-            };
-        },
-
         fetched: function(data) {
+            $('#loading-messages').hide();
             if (data['thread'] === null) {
+                $('#no-messages').show();
                 return;
             }
             var users = [];
@@ -46,17 +40,14 @@ define(function(require) {
         },
 
         render: function() {
-            var body;
-            if (typeof this.state.id == 'undefined') {
-                var body = <NewThread/>;
-            } else {
-                var body = <Messages messages={this.state.messages}/>;
+            if (this.state === null) {
+                return false;
             }
             return (
                 <div>
                     <Heading title={this.state.title} users={this.state.users}/>
                     <hr/>
-                    {body}
+                    <Messages messages={this.state.messages}/>
                     <Compose submit={this.send} thread_id={this.state.id}/>
                 </div>
             );

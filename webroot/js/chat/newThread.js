@@ -1,1 +1,0 @@
-define(["require","react","jquery","utils/autocomplete"],function(e){var t=e("react"),n=e("jquery"),r=e("utils/autocomplete"),i=t.createClass({displayName:"NewThread",componentDidMount:function(){autocomplete=new r,console.log(n("#test"))},render:function(){return t.createElement("div",{className:"message"})}});return i});

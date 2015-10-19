@@ -1,29 +1,20 @@
-<?php //debug('test');exit;?>
 <div class="container">
     <div class="row">
         <div class="col-md-8">
-            <hr>
             <h2>New message</h2>
             <hr>
             <?= $this->Form->create() ?>
-            <?= $this->Form->input('user') ?>
+            <?= $this->Form->input('users', [
+                'data-selectize' => 'username',
+                'data-url' => '/api/users.json',
+                'data-url' => '/api/users.json',
+            ]) ?>
             <?= $this->Form->input('thread.title') ?>
             <?= $this->Form->input('message.body') ?>
             <?= $this->Form->submit('Send', ['class' => 'btn btn-primary']) ?>
             <?= $this->Form->end() ?>
         </div>
         <div class="col-md-4">
-            <hr>
-            <div class="pull-right">
-                <?= $this->Html->link(
-                    'Inbox <i class="fa fa-caret-down"></i>',
-                    [],
-                    [
-                        'class' => 'btn btn-default',
-                        'escape' => false
-                    ]
-                ) ?>
-            </div>
             <h2>Threads</h2>
             <hr>
             <div class="content-frame-right">
@@ -49,8 +40,4 @@
         </div>
     </div>
 </div>
-
-
-
-
-
+<?php $this->Require->module('utils/selectize') ?>

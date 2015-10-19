@@ -5,8 +5,31 @@
         <div class="col-md-8">
             <div id="thread" 
                 data-thread-id="<?= $id ?>"
-                data-thread-title="loading"
                 data-thread-users="Conversation">
+            </div>
+            <div id="loading-messages">
+                <h2>Loading</h2>
+                <hr>
+                <div class="well text-center">
+                    <p>Please wait while we are retrieving your messages.</p>
+                    <?= $this->Html->link(
+                        'New Message', 
+                        ['controller' => 'threads', 'action' => 'add'],
+                        ['class' => 'btn btn-primary']
+                    ) ?>
+                </div>
+            </div>
+            <div id="no-messages" style="display:none;">
+                <h2>Your inbox is empty</h2>
+                <hr>
+                <div class="well text-center">
+                    <p>Your don't have any messages at the moment.</p>
+                    <?= $this->Html->link(
+                        'New Message', 
+                        ['controller' => 'threads', 'action' => 'add'],
+                        ['class' => 'btn btn-primary']
+                    ) ?>
+                </div>
             </div>
         </div>
 
