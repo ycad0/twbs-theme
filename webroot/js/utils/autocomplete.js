@@ -1,1 +1,0 @@
-define(["require","jquery","selectize"],function(e){var t=e("jquery"),n=e("selectize");console.log(t("[data-selectize]"))});

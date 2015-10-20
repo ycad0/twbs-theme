@@ -13,6 +13,7 @@ define(function(require) {
                 thread['users'].forEach(function(user){
                     users.push(user.username);
                 });
+                var link = '/threads/index/' + thread['id'];
                 return(
                     <div className="panel panel-default">
                         <div className="panel-heading">
@@ -23,7 +24,7 @@ define(function(require) {
                             <div className="row">
                                 <div className="col-md-3 text-center">
                                     <img src="/TwbsTheme/img/avatar.jpg" className="img-circle img-responsive center-block"/>
-                                    <a href="#">View</a>
+                                    <a href={thread.id}>View</a>
                                 </div>
                                 <div className="col-md-9">
                                     {users}
