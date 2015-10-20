@@ -10,14 +10,6 @@
             <div id="loading-messages">
                 <h2>Loading</h2>
                 <hr>
-                <div class="well text-center">
-                    <p>Please wait while we are retrieving your messages.</p>
-                    <?= $this->Html->link(
-                        'New Message', 
-                        ['controller' => 'threads', 'action' => 'add'],
-                        ['class' => 'btn btn-primary']
-                    ) ?>
-                </div>
             </div>
             <div id="no-messages" style="display:none;">
                 <h2>Your inbox is empty</h2>

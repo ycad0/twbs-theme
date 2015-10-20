@@ -8,7 +8,7 @@ define(function(require) {
 
         mixins: [CommunicationMixin],
 
-        fetchUrl: "/messages/threads/summary.json",
+        fetchUrl: "/api/threads/summary.json",
         //sendUrl:  "/messages/messages/add.json",
         //recieveUri: "messages.send",
 
