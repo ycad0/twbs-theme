@@ -33,4 +33,5 @@
 
     </div>
 </div>
-<?php $this->Require->module('chat/load') ?>
+<?php $this->Require->module('chat/loadThread') ?>
+<?php $this->Require->module('chat/loadSummary') ?>

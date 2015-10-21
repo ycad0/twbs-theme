@@ -10,34 +10,16 @@
                 'data-url' => '/api/users.json',
             ]) ?>
             <?= $this->Form->input('thread.title') ?>
-            <?= $this->Form->input('message.body') ?>
+            <?= $this->Form->input('message.body', ['type' => 'textarea']) ?>
             <?= $this->Form->submit('Send', ['class' => 'btn btn-primary']) ?>
             <?= $this->Form->end() ?>
         </div>
         <div class="col-md-4">
-            <h2>Threads</h2>
+            <h2>Conversations</h2>
             <hr>
-            <div class="content-frame-right">
-                <div class="list-group list-group-contacts border-bottom push-down-10">
-                    <?php for ($i=0; $i<8; $i++) : ?>
-                        <a href="#" class="list-group-item">
-                            <i class="fa fa-circle-o"></i>
-                            <?php //h($thread->created) ?>
-                            <img src="/messages/img/avatar.jpg" class="pull-left img-circle" alt="Jason Statham" style="margin:0 10px;">
-                            <strong>Jason Statham</strong>
-                            <p>Wait a minute, Doc. Ah... Are you telling me you built a time machine... out of a DeLorean?</p>
-                        </a>                            
-                    <?php endfor; ?>
-                    <div class="paginator">
-                        <ul class="pagination">
-                            <?= $this->Paginator->prev('< ' . __('previous')) ?>
-                            <?= $this->Paginator->numbers() ?>
-                            <?= $this->Paginator->next(__('next') . ' >') ?>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+            <div id="summary"></div>
         </div>
     </div>
 </div>
 <?php $this->Require->module('utils/selectize') ?>
+<?php $this->Require->module('chat/loadSummary') ?>

@@ -1,0 +1,1 @@
+define(["require","react","chat/thread"],function(e){var t=e("react"),n=e("chat/thread"),r=document.getElementById("thread"),i=r.getAttribute("data-thread-id"),s=r.getAttribute("data-thread-users"),o=r.getAttribute("data-thread-title");t.render(t.createElement(n,{id:i,title:o,users:s}),r)});

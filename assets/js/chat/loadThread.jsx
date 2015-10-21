@@ -2,12 +2,9 @@ define(function(require) {
 
     var React = require('react');
     var Thread = require('chat/thread');
-    var Summary = require('chat/summary');
 
     // components
     var thread = document.getElementById('thread');
-    var summary = document.getElementById('summary');
-
 
     // initial data
     var threadId = thread.getAttribute('data-thread-id');
@@ -18,7 +15,6 @@ define(function(require) {
         <Thread id={threadId} title={title} users={users}/>,
         thread
     );
-    React.render(<Summary/>, summary);
 
 });
 
