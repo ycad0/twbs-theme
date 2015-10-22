@@ -12,14 +12,6 @@ module.exports = function(grunt) {
       '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;' +
       ' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */\n',
     // Task configuration.
-    bowerRequirejs: {
-        options: {
-            transitive: true
-        },
-        target: {
-            rjsConfig: 'assets/js/main.js'
-        }
-    },
     babel: {
       options: {
         sourceMap: false
@@ -161,12 +153,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-requirejs');
-  grunt.loadNpmTasks('grunt-bower-requirejs');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-babel');
 
   // Default task.
-  grunt.registerTask('default', ['bowerRequirejs','babel', 'requirejs', 'copy', 'less']);
+  grunt.registerTask('default', ['babel', 'requirejs', 'copy', 'less']);
 
 };
