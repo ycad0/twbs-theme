@@ -35,7 +35,7 @@ module.exports = function(grunt) {
           baseUrl:"./",
           dir:"webroot/js",
           modules:[{
-            name: "main",
+            name: "config",
           }],
           noBuildTxt: true
         }
@@ -78,8 +78,12 @@ module.exports = function(grunt) {
       }
     },
     clean: {
-        tmp: ["assets/tmp"],
-        webroot: ["webroot/js/**/*.jsx"],
+      tmp: [
+        "assets/tmp",
+        "webroot/css",
+        "webroot/js"
+      ],
+      webroot: ["webroot/js/**/*.jsx"],
     },
     concat: {
       options: {
@@ -150,6 +154,7 @@ module.exports = function(grunt) {
 
   // These plugins provide necessary tasks.
   grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-qunit');
   grunt.loadNpmTasks('grunt-contrib-jshint');
@@ -160,6 +165,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-babel');
 
   // Default task.
-  grunt.registerTask('default', ['babel', 'requirejs', 'copy', 'less']);
+  grunt.registerTask('default', ['clean', 'babel', 'requirejs', 'copy', 'less']);
 
 };
