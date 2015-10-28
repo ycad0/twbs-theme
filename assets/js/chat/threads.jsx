@@ -24,7 +24,7 @@ define(function(require) {
                             <div className="row">
                                 <div className="col-md-3 text-center">
                                     <img src="/TwbsTheme/img/avatar.jpg" className="img-circle img-responsive center-block"/>
-                                    <a href={thread.id}>View</a>
+                                    <a href={link}>View</a>
                                 </div>
                                 <div className="col-md-9">
                                     {users}
