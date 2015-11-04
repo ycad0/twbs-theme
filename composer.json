@@ -12,7 +12,7 @@
         "gintonicweb/websockets": "dev-master"
     },
     "require-dev": {
-        "phpunit/phpunit": "*",
+        "phpunit/phpunit": "~4.1",
         "cakephp/cakephp-codesniffer": "dev-master"
     },
     "suggest": {
