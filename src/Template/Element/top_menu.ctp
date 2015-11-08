@@ -26,7 +26,7 @@
                     <?= $this->Html->link('Posts',
                         [
                             'controller' => 'posts',
-                            'plugin' => 'posts',
+                            'plugin' => 'GintonicCMS',
                         ]
                     ) ?>
                 </li>
