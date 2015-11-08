@@ -23,6 +23,14 @@
             <?php if ($this->request->session()->check('Auth.User')) : ?>
             <ul class="nav navbar-nav">
                 <li>
+                    <?= $this->Html->link('Posts',
+                        [
+                            'controller' => 'posts',
+                            'plugin' => 'posts',
+                        ]
+                    ) ?>
+                </li>
+                <li>
                     <?= $this->Html->link('Messages',
                         [
                             'controller' => 'threads',
