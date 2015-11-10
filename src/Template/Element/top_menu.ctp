@@ -34,7 +34,7 @@
                     <?= $this->Html->link('Messages',
                         [
                             'controller' => 'threads',
-                            'plugin' => 'messages',
+                            'plugin' => 'GintonicCMS',
                         ]
                     ) ?>
                 </li>
