@@ -29,7 +29,10 @@
 
         <?= $this->Require->module('jquery');?>
         <?= $this->Require->module('bootstrap');?>
-        <?= $this->Require->load('Requirejs.require', 'TwbsTheme.main'); ?>
+        <?= $this->Require->load('Requirejs.require', 'TwbsTheme.base', [
+            'TwbsTheme.config',
+            'Images.config',
+        ]); ?>
 
     </body>
 </html>
