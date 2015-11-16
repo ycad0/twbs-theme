@@ -9,7 +9,7 @@
                         [
                             'controller' => 'posts',
                             'action' => 'view',
-                            $post->id
+                            $post->slug
                         ],
                         [
                             'class' => 'btn btn-primary'
