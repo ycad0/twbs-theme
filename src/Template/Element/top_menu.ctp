@@ -1,5 +1,6 @@
 <?php 
     use Permissions\Model\Entity\Role;
+    $_user = false;
     if ($this->request->session()->check('Auth.User')) {
         $_user = $this->request->session()->read('Auth.User');
     }
