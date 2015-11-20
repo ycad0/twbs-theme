@@ -1,3 +1,10 @@
+<?php 
+    use Permissions\Model\Entity\Role;
+    if ($this->request->session()->check('Auth.User')) {
+        $_user = $this->request->session()->read('Auth.User');
+    }
+?>
+
 <div class="navbar navbar-default navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
@@ -41,11 +48,10 @@
             </ul>
             <?php endif; ?>
             <ul class="nav navbar-nav navbar-right">
-                <?php if($this->request->session()->check('Auth.User')): ?>
+                <?php if ($_user) : ?>
                 <li class="dropdown">
                     <?= $this->Html->link(
-                        $this->request->session()->read('Auth.User.username') .
-                        '<span class="caret"></span>',
+                        $_user['username'] .  '<span class="caret"></span>',
                         '#',
                         [
                             'escape'=>false,
@@ -56,23 +62,26 @@
                         ]
                     ) ?>
                     <ul class="dropdown-menu" role="menu">
+                        <?php if ($_user['role'] === Role::ADMIN) : ?>
+                            <li>
+                                <?= $this->Html->link(
+                                    __('Administration'),
+                                    ['controller'=>'Users', 'action'=>'edit', 'prefix' => 'admin']
+                                ) ?>
+                            </li>
+                            <li role="separator" class="divider"></li>
+                        <?php endif ?>
                         <li>
                             <?= $this->Html->link(
                                 __('Preferences'),
-                                ['controller'=>'Users', 'action'=>'edit'],
-                                ['escape'=>false]
+                                ['controller'=>'Users', 'action'=>'edit']
                             ) ?>
                         </li>
                         <?php echo $this->fetch('topMenuActions'); ?>
                         <li>
                             <?= $this->Html->link(
                                 __('Sign out'),
-                                [
-                                    'plugin'=>'Users',
-                                    'controller'=>'Users',
-                                    'action'=>'signout'
-                                ],
-                                ['escape'=>false]
+                                ['plugin'=>'Users', 'controller'=>'Users', 'action'=>'signout']
                             ) ?>
                         </li>
                     </ul>
