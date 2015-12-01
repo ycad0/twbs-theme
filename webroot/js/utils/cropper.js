@@ -1,1 +1,0 @@
-define(["require","jquery","cropper"],function(e){var t=e("jquery"),n=e("cropper")});
