@@ -1,69 +1,36 @@
-<div class="container">
-    <h2> 
-        <?php 
-            $users = $thread->toArray()['users'];
-            $users = \Cake\Utility\Hash::extract($users, '{n}.first');
-            echo $this->Text->toList($users);
-        ?>
-        <small><?= $thread->title ?></small>
-    </h2>
-    <hr>
-    <div class="row">
-        <div class="col-md-8">
-            <?= $this->Html->link(
-                '<i class="fa fa-plus"></i> New Message',
-                [
-                    'plugin' => 'messages',
-                    'controller' => 'threads',
-                    'action' => 'add',
-                ],
-                [
-                    'class' => 'btn btn-default',
-                    'escape' => false
-                ]
-            ) ?>
-            <div class="pull-right">
+<div class="row">
+    <div class="col-md-4">
+        <h2>Conversations</h2>
+        <div id="summary"></div>
+    </div>
+
+    <div class="col-md-8">
+    <?php if($id) : ?>
+        <div id="thread" 
+            data-thread-id="<?= $id ?>"
+            data-thread-users="Conversation">
+        </div>
+        <div id="loading-messages">
+            <h2>Loading</h2>
+            <hr>
+        </div>
+    <?php else : ?>
+        <div id="no-messages">
+            <h2>Your inbox is empty</h2>
+            <hr>
+            <div class="well text-center">
+                <p>Your don't have any messages at the moment.</p>
                 <?= $this->Html->link(
-                    '<i class="fa fa-cog"></i>',
-                    [],
-                    [
-                        'class' => 'btn btn-default',
-                        'escape' => false
-                    ]
+                    'New Message', 
+                    ['controller' => 'threads', 'action' => 'add'],
+                    ['class' => 'btn btn-primary']
                 ) ?>
             </div>
-
-            <?php foreach ($messages as $message) : ?>
-                <?= $this->element('message', ['message' => $message]) ?>
-            <?php endforeach; ?>
-
-            <?= $this->Form->create(null, [
-                'url' => ['controller' => 'messages', 'action' => 'add']
-            ]) ?>
-            <?= $this->Form->input('thread_id', [
-                'type' => 'hidden',
-                'value' => $thread->id
-            ]) ?>
-            <div class="input-group">
-                <input id="body" name="body" type="text" class="form-control" placeholder="Your message...">
-                <div class="input-group-btn">
-                    <button type="submit" class="btn btn-default">Send</button>
-                </div>
-            </div>
-            <?= $this->Form->end() ?>
-
         </div>
-        <div class="col-md-4">
-            <?php foreach ($threads as $thread) : ?>
-                <?= $this->element('Messages.preview', ['thread' => $thread]) ?>
-            <?php endforeach; ?>
-            <div class="paginator">
-                <ul class="pagination">
-                    <?= $this->Paginator->prev('< ' . __('previous')) ?>
-                    <?= $this->Paginator->numbers() ?>
-                    <?= $this->Paginator->next(__('next') . ' >') ?>
-                </ul>
-            </div>
-        </div>
+    <?php endif ?>
     </div>
+
 </div>
+
+<?php $this->Require->module('chat/loadThread') ?>
+<?php $this->Require->module('chat/loadSummary') ?>

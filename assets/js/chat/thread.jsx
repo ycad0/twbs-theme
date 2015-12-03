@@ -11,16 +11,11 @@ define(function(require) {
 
         mixins: [CommunicationMixin],
 
-        fetchUrl: "/api/threads/view.json",
+        fetchUrl: "/api/threads/view",
         sendUrl:  "/api/messages/add.json",
         recieveUri: "messages.add",
 
         fetched: function(data) {
-            $('#loading-messages').hide();
-            if (data['thread'] === null) {
-                $('#no-messages').show();
-                return;
-            }
             var users = [];
             data['thread']['users'].forEach(function(user){
                 users.push(user.username);
@@ -32,6 +27,7 @@ define(function(require) {
                 users: users,
                 messages: data['messages']
             });
+            $('#loading-messages').hide();
         },
 
         recieved: function(data) {

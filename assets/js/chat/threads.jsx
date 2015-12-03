@@ -8,30 +8,32 @@ define(function(require) {
         render: function() {
 
             var threads = this.props.threads.map(function (thread){
-                 
+
                 var users = [];
                 thread['users'].forEach(function(user){
                     users.push(user.username);
                 });
-                var link = '/threads/index/' + thread['id'];
+
+                var link = '/threads/view/' + thread['id'];
+
+                var formatter = new Intl.DateTimeFormat("en", {month: "short"});
+                var date = formatter.format(new Date(thread.modified)) + ' ' + new Date(thread.modified).getDay();
+
                 return(
-                    <div className="panel panel-default">
-                        <div className="panel-heading">
-                            <span className="pull-right"><i className="fa fa-times"></i></span>
-                            {new Date(thread.modified).toDateString()}
-                        </div>
-                        <div className="panel-body">
-                            <div className="row">
-                                <div className="col-md-3 text-center">
-                                    <img src="/TwbsTheme/img/avatar.jpg" className="img-circle img-responsive center-block"/>
-                                    <a href={link}>View</a>
-                                </div>
-                                <div className="col-md-9">
-                                    {users}
-                                    <p>{thread['_matchingData']['Messages']['body']}</p>
-                                </div>
+                    <div>
+                        <hr/>
+                        <a href={link}>
+                        <div className="row">
+                            <div className="col-md-3 text-center">
+                                <img src="/TwbsTheme/img/avatar.jpg" className="img-circle img-responsive center-block"/>
+                            </div>
+                            <div className="col-md-9">
+                                <span className="pull-right">{date}</span>
+                                {users}
+                                <p>{thread['messages'][0]['body']}</p>
                             </div>
                         </div>
+                        </a>
                     </div>
                 );
             });

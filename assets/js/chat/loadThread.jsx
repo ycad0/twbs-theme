@@ -6,15 +6,16 @@ define(function(require) {
     // components
     var thread = document.getElementById('thread');
 
-    // initial data
-    var threadId = thread.getAttribute('data-thread-id');
-    var users = thread.getAttribute('data-thread-users');
-    var title = thread.getAttribute('data-thread-title');
+    if (thread) {
 
-    React.render(
-        <Thread id={threadId} title={title} users={users}/>,
-        thread
-    );
+        var threadId = thread.getAttribute('data-thread-id');
+        var users = thread.getAttribute('data-thread-users');
+        var title = thread.getAttribute('data-thread-title');
 
+        React.render(
+            <Thread id={threadId} title={title} users={users}/>,
+            thread
+        );
+    }
 });
 

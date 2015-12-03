@@ -8,9 +8,8 @@ define(function(require) {
 
         mixins: [CommunicationMixin],
 
-        fetchUrl: "/api/threads/summary.json",
-        //sendUrl:  "/messages/messages/add.json",
-        //recieveUri: "messages.send",
+        fetchUrl: "/api/threads/index",
+        //recieveUri: "threads.add",
 
         getInitialState: function() {
             return {
@@ -24,10 +23,11 @@ define(function(require) {
             });
         },
 
-        //recieved: function(data){
-        //    this.state.messages.push(data);
-        //    this.setState({messages: this.state.messages});
-        //},
+        recieved: function(data){
+            this.setState({
+                threads: data['threads']
+            });
+        },
 
         render: function() {
             return (
