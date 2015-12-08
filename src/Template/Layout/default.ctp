@@ -25,7 +25,9 @@
         <?= $this->element('top_menu')?>
         <?= $this->Flash->render(); ?>
 
-        <?= $this->fetch('content'); ?>	                    
+        <div class="container">
+            <?= $this->fetch('content'); ?>	                    
+        </div>
 
         <footer class="footer">
           <div class="container">
