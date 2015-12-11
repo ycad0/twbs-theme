@@ -12,7 +12,7 @@ define(function(require) {
         mixins: [CommunicationMixin],
 
         fetchUrl: "/api/threads/view",
-        sendUrl:  "/api/messages/add.json",
+        sendUrl:  "/api/messages/add",
         recieveUri: "messages.add",
 
         fetched: function(data) {
