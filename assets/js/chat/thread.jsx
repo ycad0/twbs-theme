@@ -31,6 +31,9 @@ define(function(require) {
         },
 
         recieved: function(data) {
+            if (data.thread_id != this.state.id) {
+                return;
+            }
             this.state.messages.push(data);
             this.setState({messages: this.state.messages});
         },
