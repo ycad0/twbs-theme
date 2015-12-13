@@ -25,7 +25,7 @@ define(function(require) {
                 id: data['thread']['id'],
                 title: data['thread']['title'],
                 users: users,
-                messages: data['messages']
+                messages: data['messages'].reverse(),
             });
             $('#loading-messages').hide();
         },
