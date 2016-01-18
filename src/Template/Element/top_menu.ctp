@@ -67,7 +67,7 @@
                             <li>
                                 <?= $this->Html->link(
                                     __('Administration'),
-                                    ['controller'=>'Users', 'action'=>'edit', 'prefix' => 'admin']
+                                    ['controller'=>'Users', 'action'=>'index', 'prefix' => 'admin']
                                 ) ?>
                             </li>
                             <li role="separator" class="divider"></li>
