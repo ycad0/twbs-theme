@@ -82,7 +82,12 @@
                         <li>
                             <?= $this->Html->link(
                                 __('Sign out'),
-                                ['plugin'=>'Users', 'controller'=>'Users', 'action'=>'signout']
+                                [
+                                    'plugin'=>'Users',
+                                    'controller'=>'Users',
+                                    'action'=>'signout',
+                                    'prefix' => false
+                                ]
                             ) ?>
                         </li>
                     </ul>
