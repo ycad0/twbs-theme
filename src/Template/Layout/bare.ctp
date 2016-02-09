@@ -23,20 +23,13 @@
     <body>
 
         <div class="container">
-            <?= $this->Flash->render(); ?>
-            <?= $this->fetch('content'); ?>	                    
+            <?= $this->Flash->render() ?>
+            <?= $this->fetch('content') ?>
         </div>
 
-        <?= $this->Require->module('jquery');?>
-        <?= $this->Require->module('bootstrap');?>
-        <?= $this->Require->load('Requirejs.require', 'TwbsTheme.base', [
-            'TwbsTheme.config',
-            'Images.config',
-        ]); ?>
+        <?= $this->Require->module('jquery') ?>
+        <?= $this->Require->module('bootstrap') ?>
+        <?= $this->Require->load(['TwbsTheme.config', 'Images.config']) ?>
 
     </body>
 </html>
-
-
-
-
