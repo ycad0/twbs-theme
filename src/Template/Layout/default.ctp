@@ -36,10 +36,7 @@
         </footer>
         <?= $this->Require->module('jquery');?>
         <?= $this->Require->module('bootstrap');?>
-        <?= $this->Require->load('Requirejs.require', 'TwbsTheme.config', [
-            'TwbsTheme.base',
-            'Images.config',
-        ]); ?>
+        <?= $this->Require->load(['TwbsTheme.config','Images.config']); ?>
     </body>
 </html>
 
