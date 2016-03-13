@@ -12,7 +12,7 @@
             <?= $this->fetch('title') ?>
         </title>
 
-        <?php echo $this->Html->css('TwbsTheme.bare') ?>
+        <?php echo $this->Html->css('TwbsTheme.twbs-bare') ?>
 
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -23,17 +23,13 @@
     <body>
 
         <div class="container">
-            <?= $this->Flash->render(); ?>
-            <?= $this->fetch('content'); ?>	                    
+            <?= $this->Flash->render() ?>
+            <?= $this->fetch('content') ?>
         </div>
 
-        <?= $this->Require->req('jquery');?>
-        <?= $this->Require->req('bootstrap');?>
-        <?= $this->Require->load(); ?>
+        <?= $this->Require->module('jquery') ?>
+        <?= $this->Require->module('bootstrap') ?>
+        <?= $this->Require->load(['TwbsTheme.config', 'Images.config']) ?>
 
     </body>
 </html>
-
-
-
-

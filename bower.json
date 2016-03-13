@@ -6,7 +6,9 @@
     "Philippe Lafrance <phil.laf@gmail.com>"
   ],
   "description": "Twitter Bootstrap default theme for GintonicCMS",
-  "main": ["webroot"],
+  "main": [
+    "webroot"
+  ],
   "license": "MIT",
   "ignore": [
     "*",
@@ -17,6 +19,9 @@
   ],
   "dependencies": {
     "bootstrap": "~3.3.4",
-    "fontawesome": "~4.4.0"
+    "fontawesome": "~4.4.0",
+    "react": "~0.13.3",
+    "selectize": "~0.12.1",
+    "cropper": "~1.0.0"
   }
 }

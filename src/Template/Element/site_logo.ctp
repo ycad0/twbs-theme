@@ -1,4 +1,4 @@
-<?= $this->Html->image( 'GintonicCMS.logo.png', [
+<?= $this->Html->image('TwbsTheme.logo.png', [
     "class" => "img-responsive profile-img site-logo",
     "alt" => 'GintonicCMS'
 ]) ?>

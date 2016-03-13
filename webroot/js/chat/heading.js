@@ -1,0 +1,1 @@
+define(["require","react"],function(e){var t=e("react"),n=t.createClass({displayName:"Heading",render:function(){return t.createElement("h2",null,this.props.users.join(", ")," ",t.createElement("small",null,this.props.title))}});return n});
